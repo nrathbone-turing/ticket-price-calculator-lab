@@ -18,10 +18,30 @@ Display the result using an f-string
 
 # first function to determine which age group the user falls in
 def age_group(age: int) -> str:
+    # Children (age 12 and under)
     if age <= 12:
         return "child"
+    # Seniors (age 60 and above)
     elif age >= 60:
         return "senior"
+    # Adults (age 13-59)
+    # have to add after seniors since otherwise the condition would be met for any adult
     else:
         return "adult"
 
+# second function to calculate ticket price based on age group and movie type
+def calculate_ticket_price(age: int, movie_type: str) -> int:
+    category = age_group(age)
+
+    if category == "child":
+        # $8 for regular movies, $10 for premium movies
+        return 8 if movie_type == "regular" else 10
+    elif category == "adult":
+        # $12 for regular movies, $15 for premium movies
+        return 12 if movie_type == "regular" else 15
+    elif category == "senior":
+        # $10 for regular movies, $12 for premium movies
+        return 10 if movie_type == "regular" else 12
+    else:
+        raise ValueError("Invalid input. Please enter your age: ")
+    
