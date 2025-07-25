@@ -45,3 +45,22 @@ def calculate_ticket_price(age: int, movie_type: str) -> int:
     else:
         raise ValueError("Invalid input. Please enter your age: ")
     
+# third function is the main function to actually get inputs and return outputs to console
+def main():
+    # get and validate age input
+    age_input = input("Please enter your age: ")
+    age = int(age_input)
+
+    # get and validate movie type input
+    movie_type = input("Please enter the movie type (regular or premium): ").lower()
+    while movie_type not in ["regular", "premium"]:
+        print("Invalid movie type. Please enter 'regular' or 'premium'.")
+        movie_type = input("Please enter the movie type (regular or premium): ").lower()
+
+    # calculate and display ticket price
+    ticket_price = calculate_ticket_price(age, movie_type)
+    print(f"\nYour ticket price is: ${ticket_price}")
+
+# run the actual script
+if __name__ == "__main__":
+    main()
