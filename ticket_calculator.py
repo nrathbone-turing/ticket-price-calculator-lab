@@ -64,3 +64,24 @@ def main():
 # run the actual script
 if __name__ == "__main__":
     main()
+
+    # required test cases with expected outputs for autograder
+    print("\nTest Case: 12 yrs old, regular ticket")
+    print("Expected output for price for regular child's ticket,")
+    print("Result: $" + str(calculate_ticket_price(12, "regular")))
+
+    print("\nTest Case: 11 yrs old, premium ticket")
+    print("Expected output for price for premium child's ticket")
+    print("Result: $" + str(calculate_ticket_price(11, "premium")))
+
+    print("\nTest Case: 13 yrs old, regular ticket")
+    print("Expected output for regular adult ticket")
+    print("Result: $" + str(calculate_ticket_price(13, "regular")))
+
+    print("\nTest Case: 60 yrs old, regular ticket")
+    print("Expected output for senior regular ticket")
+    print("Result: $" + str(calculate_ticket_price(60, "regular")))
+
+    print("\nTest Case: 59 yrs old, premium ticket")
+    print("Expected output for senior premium ticket")
+    print("Result: $" + str(calculate_ticket_price(59, "premium")))
